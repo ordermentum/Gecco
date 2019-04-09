@@ -14,8 +14,18 @@ public struct SpotlightDictionary {
         // This initializer intentionally left empty
     }
     
-    public var spotlight: SpotlightType = Spotlight.Oval.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-    public var helperView: UIView = UIView()
+    public var spotlight: SpotlightType = Spotlight.Oval.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    public var helperView: HelperView = HelperView()
     public var duartion: TimeInterval = TimeInterval()
     public var moveType: SpotlightMoveType = SpotlightMoveType.direct
+}
+
+public struct HelperView {
+    public init() {
+        // This initializer intentionally left empty
+    }
+    
+    public var view: UIView = UIView()
+    public var isPreviousButton: Bool = false
+    public var isNextButton: Bool = false
 }

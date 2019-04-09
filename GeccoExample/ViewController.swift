@@ -66,12 +66,16 @@ class ViewController: UIViewController {
         let previousButton: UIButton = UIButton(frame: CGRect(x: 100, y: 420, width: 100, height: 30))
         previousButton.setTitleColor(.white, for: .normal)
         previousButton.setTitle("Previous", for: .normal)
-        previousButton.addTarget(self, action: #selector(previousAction), for: .touchUpInside)
+        
+        //Create Helper View
+        var previousHelperView: HelperView = HelperView()
+        previousHelperView.isPreviousButton = true
+        previousHelperView.view = previousButton
         
         //Add Spotlight View
         var thirdImageSpotlight: SpotlightDictionary = SpotlightDictionary()
         thirdImageSpotlight.spotlight = Spotlight.Oval(center: thirdImageView.center, diameter: 150)
-        thirdImageSpotlight.helperView = previousButton
+        thirdImageSpotlight.helperView = previousHelperView
         viewsArray.append(thirdImageSpotlight)
         
         //Add Fourth Image View
