@@ -32,8 +32,9 @@ open class WalkthroughViewController: SpotlightViewController {
         self.init(viewsArray: [])
     }
     
-    public init(viewsArray: [SpotlightDictionary]) {
+    public init(viewsArray: [SpotlightDictionary], showsSkipButton: Bool = true) {
         self.viewsArray = viewsArray
+        self.showsSkipButton = showsSkipButton
         super.init(nibName: nil, bundle: nil)
     }
     
