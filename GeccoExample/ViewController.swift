@@ -95,10 +95,6 @@ class ViewController: UIViewController {
         walkthroughViewController.subDelegate = self
         present(walkthroughViewController, animated: true, completion: nil)
     }
-    
-    @objc func previousAction() {
-        walkthroughViewController.previous(true)
-    }
 }
 
 extension ViewController: WalkthroughViewControllerDelegate {

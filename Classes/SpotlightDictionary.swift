@@ -16,7 +16,7 @@ public struct SpotlightDictionary {
     
     public var spotlight: SpotlightType = Spotlight.Oval.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     public var helperView: HelperView = HelperView()
-    public var duartion: TimeInterval = TimeInterval()
+    public var duration: TimeInterval = TimeInterval()
     public var moveType: SpotlightMoveType = SpotlightMoveType.direct
 }
 

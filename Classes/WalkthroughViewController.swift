@@ -48,6 +48,10 @@ open class WalkthroughViewController: SpotlightViewController {
             //Set Action
             if spotlight.helperView.view.isKind(of: UIButton.self) {
                 if let button: UIButton = spotlight.helperView.view as? UIButton {
+                    //Remove Existing Targets
+                    button.removeTarget(nil, action: nil, for: .allEvents)
+                    
+                    //Set Target
                     if spotlight.helperView.isPreviousButton {
                         button.addTarget(self, action: #selector(previous(_:)), for: .touchUpInside)
                     } else if spotlight.helperView.isNextButton {
@@ -55,6 +59,9 @@ open class WalkthroughViewController: SpotlightViewController {
                     }
                 }
             } else {
+                //Remove Existing Recognizers
+                spotlight.helperView.view.gestureRecognizers?.forEach(spotlight.helperView.view.removeGestureRecognizer)
+                
                 //Build Gesture Recognizer
                 let previousGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(previous(_:)))
                 let nextGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(next(_:)))
@@ -72,42 +79,44 @@ open class WalkthroughViewController: SpotlightViewController {
         }
     }
     
-    @objc public func next(_ labelAnimated: Bool = true) {
+    @objc public func next(_ animated: Bool = true) {
         //Update Data
         stepIndex += 1
         
         //Show/Hide Helper Views
         if viewsArray.count > stepIndex {
-            animateView(view: viewsArray[stepIndex].helperView.view, labelAnimated)
+            animateView(view: viewsArray[stepIndex].helperView.view, animated)
         }
         
         //Move Spotlight
         if stepIndex < 1 {
-            spotlightView.appear(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion)
+            spotlightView.appear(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duration)
         } else if stepIndex == viewsArray.count {
             dismiss(animated: true, completion: nil)
-            stepIndex = 0
+            stepIndex = -1
         } else {
-            spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion, moveType: viewsArray[stepIndex].moveType)
+            spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duration, moveType: viewsArray[stepIndex].moveType)
         }
     }
     
-    @objc public func previous(_ labelAnimated: Bool = true) {
+    @objc public func previous(_ animated: Bool = true) {
         //Update Data
-        if stepIndex >= viewsArray.count {
-            stepIndex = viewsArray.count - 1
-        } else if stepIndex < 0 {
+        if stepIndex <= 0 {
             stepIndex = 1
+        } else if stepIndex >= viewsArray.count {
+            stepIndex = viewsArray.count - 1
         }
         stepIndex -= 1
-        
+
         //Show/Hide Helper Views
         if viewsArray.count > stepIndex {
-            animateView(view: viewsArray[stepIndex].helperView.view, labelAnimated)
+            animateView(view: viewsArray[stepIndex].helperView.view, animated)
+        } else {
+            return
         }
-        
+
         //Move Spotlight
-        spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion, moveType: viewsArray[stepIndex].moveType)
+        spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duration, moveType: viewsArray[stepIndex].moveType)
     }
     
     func animateView(view: UIView, _ animated: Bool) {
