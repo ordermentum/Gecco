@@ -7,24 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31652714701D85C0F767D18D /* Pods_GeccoExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70773A9AB0E9C5292FFCC2EF /* Pods_GeccoExample.framework */; };
 		467D20681C48883C0033D5CA /* Gecco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D205D1C48883C0033D5CA /* Gecco.framework */; };
 		46C6AE2F1C4DF9AF004AAE2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6AE1A1C4DF9A8004AAE2F /* AppDelegate.swift */; };
 		46C6AE301C4DF9BB004AAE2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C6AE1B1C4DF9A8004AAE2F /* Assets.xcassets */; };
 		46C6AE311C4DF9EA004AAE2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C6AE1E1C4DF9A8004AAE2F /* Main.storyboard */; };
 		46C6AE321C4DF9EF004AAE2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C6AE1C1C4DF9A8004AAE2F /* LaunchScreen.storyboard */; };
-		46C6AE341C4DF9F7004AAE2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6AE211C4DF9A8004AAE2F /* ViewController.swift */; };
 		46C6AE361C4DFA01004AAE2F /* Spotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A637231C4B07EB0000AF22 /* Spotlight.swift */; };
 		46C6AE371C4DFA01004AAE2F /* SpotlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A637201C49CEB00000AF22 /* SpotlightView.swift */; };
 		46C6AE381C4DFA01004AAE2F /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D20B21C488D620033D5CA /* SpotlightViewController.swift */; };
 		46C6AE391C4DFA01004AAE2F /* SpotlightTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467D20BB1C4DBF810033D5CA /* SpotlightTransitionController.swift */; };
 		46C6AE3A1C4DFA22004AAE2F /* GeccoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6AE241C4DF9A8004AAE2F /* GeccoTests.swift */; };
-		46C6AE421C4E0A5E004AAE2F /* AnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6AE411C4E0A5E004AAE2F /* AnnotationViewController.swift */; };
+		46C6AE421C4E0A5E004AAE2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6AE411C4E0A5E004AAE2F /* ViewController.swift */; };
 		B6EBAB771D8A477A004297E0 /* Gecco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D205D1C48883C0033D5CA /* Gecco.framework */; };
 		CA782BD7225C50020077B68F /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA782BD6225C50020077B68F /* WalkthroughViewController.swift */; };
 		CA782BD9225C522A0077B68F /* SpotlightDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA782BD8225C522A0077B68F /* SpotlightDictionary.swift */; };
-		D7C81E5D1769D810B1608446 /* Pods_GeccoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4138C6D4EE274A229A7F42F2 /* Pods_GeccoTests.framework */; };
-		DEEE2D876EF6AB3C161D9AC3 /* Pods_Gecco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F718960EE03679AC71EBE1 /* Pods_Gecco.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2AF8D50255F9948A4809F63E /* Pods-GeccoExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeccoExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeccoExample/Pods-GeccoExample.debug.xcconfig"; sourceTree = "<group>"; };
-		4138C6D4EE274A229A7F42F2 /* Pods_GeccoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeccoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		41F718960EE03679AC71EBE1 /* Pods_Gecco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gecco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D205D1C48883C0033D5CA /* Gecco.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gecco.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D20671C48883C0033D5CA /* Gecco.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gecco.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		467D20811C488C920033D5CA /* GeccoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeccoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,18 +47,11 @@
 		46C6AE1D1C4DF9A8004AAE2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46C6AE1F1C4DF9A8004AAE2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46C6AE201C4DF9A8004AAE2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46C6AE211C4DF9A8004AAE2F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46C6AE231C4DF9A8004AAE2F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46C6AE241C4DF9A8004AAE2F /* GeccoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeccoTests.swift; sourceTree = "<group>"; };
-		46C6AE411C4E0A5E004AAE2F /* AnnotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationViewController.swift; sourceTree = "<group>"; };
-		70773A9AB0E9C5292FFCC2EF /* Pods_GeccoExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeccoExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D34D7137749064D8162582B /* Pods-GeccoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeccoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeccoTests/Pods-GeccoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A8A5517162FA7FAF1CD236CE /* Pods-GeccoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeccoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeccoTests/Pods-GeccoTests.release.xcconfig"; sourceTree = "<group>"; };
-		BA702DE968F549BB7ABC1EDC /* Pods-Gecco.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gecco.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gecco/Pods-Gecco.debug.xcconfig"; sourceTree = "<group>"; };
-		C0A952B1CD17BDAC8BA176F7 /* Pods-Gecco.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gecco.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gecco/Pods-Gecco.release.xcconfig"; sourceTree = "<group>"; };
+		46C6AE411C4E0A5E004AAE2F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA782BD6225C50020077B68F /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		CA782BD8225C522A0077B68F /* SpotlightDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightDictionary.swift; sourceTree = "<group>"; };
-		F3E75B02BE74B1326F330132 /* Pods-GeccoExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeccoExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeccoExample/Pods-GeccoExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEEE2D876EF6AB3C161D9AC3 /* Pods_Gecco.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				467D20681C48883C0033D5CA /* Gecco.framework in Frameworks */,
-				D7C81E5D1769D810B1608446 /* Pods_GeccoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6EBAB771D8A477A004297E0 /* Gecco.framework in Frameworks */,
-				31652714701D85C0F767D18D /* Pods_GeccoExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +89,6 @@
 				46C6AE191C4DF9A8004AAE2F /* GeccoExample */,
 				46C6AE221C4DF9A8004AAE2F /* GeccoTests */,
 				467D205E1C48883C0033D5CA /* Products */,
-				BF6D036D03931C9211088112 /* Pods */,
-				B42BB4E8EAD224D6B0321903 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,8 +131,7 @@
 				46C6AE1C1C4DF9A8004AAE2F /* LaunchScreen.storyboard */,
 				46C6AE1E1C4DF9A8004AAE2F /* Main.storyboard */,
 				46C6AE201C4DF9A8004AAE2F /* Info.plist */,
-				46C6AE211C4DF9A8004AAE2F /* ViewController.swift */,
-				46C6AE411C4E0A5E004AAE2F /* AnnotationViewController.swift */,
+				46C6AE411C4E0A5E004AAE2F /* ViewController.swift */,
 			);
 			path = GeccoExample;
 			sourceTree = "<group>";
@@ -163,29 +143,6 @@
 				46C6AE241C4DF9A8004AAE2F /* GeccoTests.swift */,
 			);
 			path = GeccoTests;
-			sourceTree = "<group>";
-		};
-		B42BB4E8EAD224D6B0321903 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				41F718960EE03679AC71EBE1 /* Pods_Gecco.framework */,
-				70773A9AB0E9C5292FFCC2EF /* Pods_GeccoExample.framework */,
-				4138C6D4EE274A229A7F42F2 /* Pods_GeccoTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6D036D03931C9211088112 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BA702DE968F549BB7ABC1EDC /* Pods-Gecco.debug.xcconfig */,
-				C0A952B1CD17BDAC8BA176F7 /* Pods-Gecco.release.xcconfig */,
-				2AF8D50255F9948A4809F63E /* Pods-GeccoExample.debug.xcconfig */,
-				F3E75B02BE74B1326F330132 /* Pods-GeccoExample.release.xcconfig */,
-				9D34D7137749064D8162582B /* Pods-GeccoTests.debug.xcconfig */,
-				A8A5517162FA7FAF1CD236CE /* Pods-GeccoTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +162,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 467D20711C48883C0033D5CA /* Build configuration list for PBXNativeTarget "Gecco" */;
 			buildPhases = (
-				317BD8429B9D4C93D7B8C755 /* [CP] Check Pods Manifest.lock */,
 				467D20581C48883C0033D5CA /* Sources */,
 				467D20591C48883C0033D5CA /* Frameworks */,
 				467D205A1C48883C0033D5CA /* Headers */,
@@ -224,11 +180,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 467D20741C48883C0033D5CA /* Build configuration list for PBXNativeTarget "GeccoTests" */;
 			buildPhases = (
-				47AAB9C5F1770BE0869AB1D4 /* [CP] Check Pods Manifest.lock */,
 				467D20631C48883C0033D5CA /* Sources */,
 				467D20641C48883C0033D5CA /* Frameworks */,
 				467D20651C48883C0033D5CA /* Resources */,
-				D5E3D6897E5F0D1F0048288A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,7 +198,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 467D20A61C488C930033D5CA /* Build configuration list for PBXNativeTarget "GeccoExample" */;
 			buildPhases = (
-				D05EA45300A9182409F487A5 /* [CP] Check Pods Manifest.lock */,
 				467D207D1C488C920033D5CA /* Sources */,
 				467D207E1C488C920033D5CA /* Frameworks */,
 				467D207F1C488C920033D5CA /* Resources */,
@@ -331,97 +284,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		317BD8429B9D4C93D7B8C755 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gecco-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		47AAB9C5F1770BE0869AB1D4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GeccoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D05EA45300A9182409F487A5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GeccoExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5E3D6897E5F0D1F0048288A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GeccoTests/Pods-GeccoTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeccoTests/Pods-GeccoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		467D20581C48883C0033D5CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -448,9 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46C6AE341C4DF9F7004AAE2F /* ViewController.swift in Sources */,
 				46C6AE2F1C4DF9AF004AAE2F /* AppDelegate.swift in Sources */,
-				46C6AE421C4E0A5E004AAE2F /* AnnotationViewController.swift in Sources */,
+				46C6AE421C4E0A5E004AAE2F /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,7 +455,6 @@
 		};
 		467D20721C48883C0033D5CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA702DE968F549BB7ABC1EDC /* Pods-Gecco.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -617,7 +477,6 @@
 		};
 		467D20731C48883C0033D5CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0A952B1CD17BDAC8BA176F7 /* Pods-Gecco.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -639,7 +498,6 @@
 		};
 		467D20751C48883C0033D5CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D34D7137749064D8162582B /* Pods-GeccoTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GeccoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -652,7 +510,6 @@
 		};
 		467D20761C48883C0033D5CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8A5517162FA7FAF1CD236CE /* Pods-GeccoTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GeccoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -665,7 +522,6 @@
 		};
 		467D20A71C488C930033D5CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AF8D50255F9948A4809F63E /* Pods-GeccoExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 242DUSW4JB;
@@ -684,7 +540,6 @@
 		};
 		467D20A81C488C930033D5CA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3E75B02BE74B1326F330132 /* Pods-GeccoExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 242DUSW4JB;

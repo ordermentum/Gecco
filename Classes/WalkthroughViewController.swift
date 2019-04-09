@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+@objc public protocol WalkthroughViewControllerDelegate: class {
+    @objc optional func walkthroughViewControllerWillPresent(_ viewController: WalkthroughViewController, animated: Bool)
+    @objc optional func walkthroughViewControllerWillDismiss(_ viewController: WalkthroughViewController, animated: Bool)
+    @objc optional func walkthroughViewControllerTapped(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool)
+}
+
 open class WalkthroughViewController: SpotlightViewController {
     //Data
     var viewsArray: [SpotlightDictionary] = []
@@ -18,7 +24,7 @@ open class WalkthroughViewController: SpotlightViewController {
         self.init(viewsArray: [])
     }
     
-    init(viewsArray: [SpotlightDictionary]) {
+    public init(viewsArray: [SpotlightDictionary]) {
         self.viewsArray = viewsArray
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,36 +35,52 @@ open class WalkthroughViewController: SpotlightViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Set Delegate
+        delegate = self
+        
+        //Add Views
+        for spotlight: SpotlightDictionary in viewsArray {
+            self.view.addSubview(spotlight.helperView)
+        }
+        
+        //Start Walkhrough
+        next(true)
     }
     
     func next(_ labelAnimated: Bool) {
         //Move Annotation
-        animateView(view: viewsArray[stepIndex].view, labelAnimated)
+        animateView(view: viewsArray[stepIndex].helperView, labelAnimated)
         
         //Move Spotlight
         if stepIndex < 1 {
-            
+            spotlightView.appear(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion)
+        } else if stepIndex == viewsArray.count - 1 {
+            dismiss(animated: true, completion: nil)
+        } else {
+            spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion, moveType: viewsArray[stepIndex].moveType)
         }
-        spotlightView.appear(viewsArray[stepIndex].spotlight)
         
         //Update Data
         stepIndex += 1
     }
     
     func previous(_ labelAnimated: Bool) {
-        //Update Data
-        stepIndex -= 1
-        
         //Move Annotation
-        animateView(view: viewsArray[stepIndex].view, labelAnimated)
+        animateView(view: viewsArray[stepIndex].helperView, labelAnimated)
         
         //Move Spotlight
-        spotlightView.appear(viewsArray[stepIndex].spotlight)
+        spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion, moveType: viewsArray[stepIndex].moveType)
+            
+        //Update Data
+        stepIndex -= 1
     }
     
     func animateView(view: UIView, _ animated: Bool) {
-        view.animate(withDuration: animated ? 0.25 : 0) {
-            view.alpha = index == self.stepIndex ? 1 : 0
+        viewsArray.enumerated().forEach { index, viewObject in
+            UIView.animate(withDuration: animated ? 0.25 : 0) {
+                viewObject.helperView.alpha = index == self.stepIndex ? 1 : 0
+            }
         }
     }
 }
