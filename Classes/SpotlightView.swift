@@ -9,7 +9,7 @@
 import UIKit
 
 open class SpotlightView: UIView {
-    open static let defaultAnimateDuration: TimeInterval = 0.25
+    public static let defaultAnimateDuration: TimeInterval = 0.25
     
     fileprivate lazy var maskLayer: CAShapeLayer = {
         let layer = CAShapeLayer()

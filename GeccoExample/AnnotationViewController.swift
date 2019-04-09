@@ -8,6 +8,7 @@
 
 import UIKit
 import Gecco
+import SnapKit
 
 class AnnotationViewController: SpotlightViewController {
     
@@ -28,6 +29,9 @@ class AnnotationViewController: SpotlightViewController {
         switch stepIndex {
         case 0:
             spotlightView.appear(Spotlight.Oval(center: CGPoint(x: screenSize.width - 26, y: 42), diameter: 50))
+            spotlightView.snp.makeConstraints { (make) in
+                make.center.equalToSuperview()
+            }
         case 1:
             spotlightView.move(Spotlight.Oval(center: CGPoint(x: screenSize.width - 75, y: 42), diameter: 50))
         case 2:
