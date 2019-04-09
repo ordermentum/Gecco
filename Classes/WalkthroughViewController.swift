@@ -70,9 +70,6 @@ open class WalkthroughViewController: SpotlightViewController {
             //Add View
             self.view.addSubview(spotlight.helperView.view)
         }
-        
-        //Start Walkhrough
-//        delegate?.spotlightViewControllerWillPresent(self, animated: true)
     }
     
     @objc public func next(_ labelAnimated: Bool = true) {
