@@ -10,8 +10,14 @@ import UIKit
 import Gecco
 
 class ViewController: UIViewController {
+    //Delegate
+    weak var delegate: WalkthroughViewControllerDelegate?
+    
     //UI Elements
     var viewsArray: [SpotlightDictionary] = []
+    
+    //Data
+    var walkthroughViewController: WalkthroughViewController = WalkthroughViewController(viewsArray: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +45,6 @@ class ViewController: UIViewController {
         //Add Spotlight View
         var imageSpotlight: SpotlightDictionary = SpotlightDictionary()
         imageSpotlight.spotlight = Spotlight.Oval(center: imageView.center, diameter: 150)
-        imageSpotlight.helperView = UIView()
         viewsArray.append(imageSpotlight)
         
         //Add Second Image View
@@ -49,14 +54,65 @@ class ViewController: UIViewController {
         
         //Add Spotlight View
         var secondImageSpotlight: SpotlightDictionary = SpotlightDictionary()
-        secondImageSpotlight.spotlight = Spotlight.Oval(center: secondImageView.center, diameter: 150)
-        secondImageSpotlight.helperView = UIView()
+        secondImageSpotlight.spotlight = Spotlight.RoundedRect(center: secondImageView.center, size: CGSize(width: 150, height: 150), cornerRadius: 15)
         viewsArray.append(secondImageSpotlight)
+        
+        //Add Third Image View
+        let thirdImageView: UIImageView = UIImageView(frame: CGRect(x: 100, y: 300, width: 100, height: 100))
+        thirdImageView.backgroundColor = .green
+        self.view.addSubview(thirdImageView)
+        
+        //Create Previous Button
+        let previousButton: UIButton = UIButton(frame: CGRect(x: 100, y: 420, width: 100, height: 30))
+        previousButton.setTitleColor(.white, for: .normal)
+        previousButton.setTitle("Previous", for: .normal)
+        previousButton.addTarget(self, action: #selector(previousAction), for: .touchUpInside)
+        
+        //Add Spotlight View
+        var thirdImageSpotlight: SpotlightDictionary = SpotlightDictionary()
+        thirdImageSpotlight.spotlight = Spotlight.Oval(center: thirdImageView.center, diameter: 150)
+        thirdImageSpotlight.helperView = previousButton
+        viewsArray.append(thirdImageSpotlight)
+        
+        //Add Fourth Image View
+        let fourthImageView: UIImageView = UIImageView(frame: CGRect(x: 100, y: 600, width: 100, height: 100))
+        fourthImageView.backgroundColor = .blue
+        self.view.addSubview(fourthImageView)
+        
+        //Add Spotlight View
+        var fourthImageSpotlight: SpotlightDictionary = SpotlightDictionary()
+        fourthImageSpotlight.spotlight = Spotlight.Rect(center: fourthImageView.center, size: CGSize(width: 150, height: 150))
+        viewsArray.append(fourthImageSpotlight)
     }
     
     @objc func startTutorial() {
         //Create Walkthrough Controller
-        let walkthroughController: WalkthroughViewController = WalkthroughViewController(viewsArray: viewsArray)
-        present(walkthroughController, animated: true, completion: nil)
+        walkthroughViewController = WalkthroughViewController(viewsArray: viewsArray)
+        walkthroughViewController.subDelegate = self
+        present(walkthroughViewController, animated: true, completion: nil)
     }
+    
+    @objc func previousAction() {
+        walkthroughViewController.previous(true)
+    }
+}
+
+extension ViewController: WalkthroughViewControllerDelegate {
+    func walkthroughViewControllerPrevious(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool) {
+        //TODO
+    }
+    
+    func walkthroughViewControllerWillPresent(_ viewController: WalkthroughViewController, animated: Bool) {
+        //TODO
+    }
+    
+    func walkthroughViewControllerWillDismiss(_ viewController: WalkthroughViewController, animated: Bool) {
+        //TODO
+    }
+    
+    func walkthroughViewControllerTapped(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool) {
+        //TODO
+    }
+    
+    
 }

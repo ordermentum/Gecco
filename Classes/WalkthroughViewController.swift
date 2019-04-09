@@ -10,15 +10,19 @@ import Foundation
 import UIKit
 
 @objc public protocol WalkthroughViewControllerDelegate: class {
-    @objc optional func walkthroughViewControllerWillPresent(_ viewController: WalkthroughViewController, animated: Bool)
-    @objc optional func walkthroughViewControllerWillDismiss(_ viewController: WalkthroughViewController, animated: Bool)
-    @objc optional func walkthroughViewControllerTapped(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool)
+    @objc func walkthroughViewControllerWillPresent(_ viewController: WalkthroughViewController, animated: Bool)
+    @objc func walkthroughViewControllerWillDismiss(_ viewController: WalkthroughViewController, animated: Bool)
+    @objc func walkthroughViewControllerTapped(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool)
+    @objc func walkthroughViewControllerPrevious(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool)
 }
 
 open class WalkthroughViewController: SpotlightViewController {
+    //Delegate
+    public weak var subDelegate: WalkthroughViewControllerDelegate?
+    
     //Data
     var viewsArray: [SpotlightDictionary] = []
-    var stepIndex: Int = 0
+    var stepIndex: Int = -1
 
     convenience init() {
         self.init(viewsArray: [])
@@ -45,35 +49,45 @@ open class WalkthroughViewController: SpotlightViewController {
         }
         
         //Start Walkhrough
-        next(true)
+//        delegate?.spotlightViewControllerWillPresent(self, animated: true)
     }
     
-    func next(_ labelAnimated: Bool) {
-        //Move Annotation
-        animateView(view: viewsArray[stepIndex].helperView, labelAnimated)
+    public func next(_ labelAnimated: Bool) {
+        //Update Data
+        stepIndex += 1
+        
+        //Show/Hide Helper Views
+        if viewsArray.count > stepIndex {
+            animateView(view: viewsArray[stepIndex].helperView, labelAnimated)
+        }
         
         //Move Spotlight
         if stepIndex < 1 {
             spotlightView.appear(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion)
-        } else if stepIndex == viewsArray.count - 1 {
+        } else if stepIndex == viewsArray.count {
             dismiss(animated: true, completion: nil)
+            stepIndex = 0
         } else {
             spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion, moveType: viewsArray[stepIndex].moveType)
         }
-        
-        //Update Data
-        stepIndex += 1
     }
     
-    func previous(_ labelAnimated: Bool) {
-        //Move Annotation
-        animateView(view: viewsArray[stepIndex].helperView, labelAnimated)
+    public func previous(_ labelAnimated: Bool) {
+        //Update Data
+        if stepIndex >= viewsArray.count {
+            stepIndex = viewsArray.count - 1
+        } else if stepIndex < 0 {
+            stepIndex = 1
+        }
+        stepIndex -= 1
+        
+        //Show/Hide Helper Views
+        if viewsArray.count > stepIndex {
+            animateView(view: viewsArray[stepIndex].helperView, labelAnimated)
+        }
         
         //Move Spotlight
         spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duartion, moveType: viewsArray[stepIndex].moveType)
-            
-        //Update Data
-        stepIndex -= 1
     }
     
     func animateView(view: UIView, _ animated: Bool) {
@@ -86,15 +100,15 @@ open class WalkthroughViewController: SpotlightViewController {
 }
 
 extension WalkthroughViewController: SpotlightViewControllerDelegate {
-    private func spotlightViewControllerWillPresent(_ viewController: SpotlightViewController, animated: Bool) {
+    public func spotlightViewControllerWillPresent(_ viewController: SpotlightViewController, animated: Bool) {
         next(false)
     }
     
-    private func spotlightViewControllerTapped(_ viewController: SpotlightViewController, isInsideSpotlight: Bool) {
+    public func spotlightViewControllerTapped(_ viewController: SpotlightViewController, isInsideSpotlight: Bool) {
         next(true)
     }
     
-    private func spotlightViewControllerWillDismiss(_ viewController: SpotlightViewController, animated: Bool) {
+    public func spotlightViewControllerWillDismiss(_ viewController: SpotlightViewController, animated: Bool) {
         spotlightView.disappear()
     }
 }
