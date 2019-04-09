@@ -24,6 +24,9 @@ open class WalkthroughViewController: SpotlightViewController {
     var viewsArray: [SpotlightDictionary] = []
     var stepIndex: Int = -1
     var showsSkipButton: Bool = true
+    
+    //UI Elements
+    var skipButton: UIButton = UIButton()
 
     convenience init() {
         self.init(viewsArray: [])
@@ -52,9 +55,8 @@ open class WalkthroughViewController: SpotlightViewController {
     func setupSkipButton() {
         if showsSkipButton {
             //Add Button
-            let skipButton: UIButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 60, width: 100, height: 48))
+            skipButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 60, width: 100, height: 48))
             skipButton.setTitleColor(.white, for: .normal)
-            skipButton.backgroundColor = .white
             skipButton.setTitle("SKIP", for: .normal)
             skipButton.addTarget(self, action: #selector(skip), for: .touchUpInside)
             self.view.addSubview(skipButton)
