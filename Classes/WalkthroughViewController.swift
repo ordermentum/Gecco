@@ -23,6 +23,7 @@ open class WalkthroughViewController: SpotlightViewController {
     //Data
     var viewsArray: [SpotlightDictionary] = []
     var stepIndex: Int = -1
+    var showsSkipButton: Bool = true
 
     convenience init() {
         self.init(viewsArray: [])
@@ -43,6 +44,27 @@ open class WalkthroughViewController: SpotlightViewController {
         //Set Delegate
         delegate = self
         
+        //Setup UI
+        setupSkipButton()
+        setupHelperViews()
+    }
+    
+    func setupSkipButton() {
+        if showsSkipButton {
+            //Add Button
+            let skipButton: UIButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 100, y: 60, width: 100, height: 48))
+            skipButton.setTitleColor(.white, for: .normal)
+            skipButton.backgroundColor = .white
+            skipButton.setTitle("SKIP", for: .normal)
+            skipButton.addTarget(self, action: #selector(skip), for: .touchUpInside)
+            self.view.addSubview(skipButton)
+            
+            //Bring to Front
+            self.view.bringSubview(toFront: skipButton)
+        }
+    }
+    
+    func setupHelperViews() {
         //Setup Helper Views
         for spotlight: SpotlightDictionary in viewsArray {
             //Set Action
@@ -117,6 +139,10 @@ open class WalkthroughViewController: SpotlightViewController {
 
         //Move Spotlight
         spotlightView.move(viewsArray[stepIndex].spotlight, duration: viewsArray[stepIndex].duration, moveType: viewsArray[stepIndex].moveType)
+    }
+    
+    @objc public func skip() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func animateView(view: UIView, _ animated: Bool) {

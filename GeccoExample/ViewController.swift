@@ -31,8 +31,9 @@ class ViewController: UIViewController {
     
     func setupUI() {
         //Add Start Button
-        let startButton: UIButton = UIButton(frame: CGRect(x: 16, y: 40, width: 200, height: 30))
+        let startButton: UIButton = UIButton(frame: CGRect(x: 0, y: self.view.frame.size.height - 48, width: self.view.frame.size.width, height: 48))
         startButton.setTitleColor(.white, for: .normal)
+        startButton.backgroundColor = .black
         startButton.setTitle("START TUTORIAL", for: .normal)
         startButton.addTarget(self, action: #selector(startTutorial), for: .touchUpInside)
         self.view.addSubview(startButton)
