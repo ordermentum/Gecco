@@ -21,7 +21,7 @@ open class WalkthroughViewController: SpotlightViewController {
     public weak var subDelegate: WalkthroughViewControllerDelegate?
     
     //Data
-    var viewsArray: [SpotlightDictionary] = []
+    var viewsArray: [WalkthroughStep] = []
     var stepIndex: Int = -1
     var showsSkipButton: Bool = true
     
@@ -32,7 +32,7 @@ open class WalkthroughViewController: SpotlightViewController {
         self.init(viewsArray: [])
     }
     
-    public init(viewsArray: [SpotlightDictionary], showsSkipButton: Bool = true) {
+    public init(viewsArray: [WalkthroughStep], showsSkipButton: Bool = true) {
         self.viewsArray = viewsArray
         self.showsSkipButton = showsSkipButton
         super.init(nibName: nil, bundle: nil)
@@ -69,7 +69,7 @@ open class WalkthroughViewController: SpotlightViewController {
     
     func setupHelperViews() {
         //Setup Helper Views
-        for spotlight: SpotlightDictionary in viewsArray {
+        for spotlight: WalkthroughStep in viewsArray {
             //Set Action
             if spotlight.helperView.view.isKind(of: UIButton.self) {
                 if let button: UIButton = spotlight.helperView.view as? UIButton {

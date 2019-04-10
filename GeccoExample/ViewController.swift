@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     weak var delegate: WalkthroughViewControllerDelegate?
     
     //UI Elements
-    var viewsArray: [SpotlightDictionary] = []
+    var viewsArray: [WalkthroughStep] = []
     
     //Data
     var walkthroughViewController: WalkthroughViewController = WalkthroughViewController(viewsArray: [])
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         self.view.addSubview(imageView)
         
         //Add Spotlight View
-        var imageSpotlight: SpotlightDictionary = SpotlightDictionary()
+        var imageSpotlight: WalkthroughStep = WalkthroughStep()
         imageSpotlight.spotlight = Spotlight.Oval(center: imageView.center, diameter: 150)
         viewsArray.append(imageSpotlight)
         
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         self.view.addSubview(secondImageView)
         
         //Add Spotlight View
-        var secondImageSpotlight: SpotlightDictionary = SpotlightDictionary()
+        var secondImageSpotlight: WalkthroughStep = WalkthroughStep()
         secondImageSpotlight.spotlight = Spotlight.RoundedRect(center: secondImageView.center, size: CGSize(width: 150, height: 150), cornerRadius: 15)
         viewsArray.append(secondImageSpotlight)
         
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         previousHelperView.view = previousButton
         
         //Add Spotlight View
-        var thirdImageSpotlight: SpotlightDictionary = SpotlightDictionary()
+        var thirdImageSpotlight: WalkthroughStep = WalkthroughStep()
         thirdImageSpotlight.spotlight = Spotlight.Oval(center: thirdImageView.center, diameter: 150)
         thirdImageSpotlight.helperView = previousHelperView
         viewsArray.append(thirdImageSpotlight)
@@ -85,14 +85,14 @@ class ViewController: UIViewController {
         self.view.addSubview(fourthImageView)
         
         //Add Spotlight View
-        var fourthImageSpotlight: SpotlightDictionary = SpotlightDictionary()
+        var fourthImageSpotlight: WalkthroughStep = WalkthroughStep()
         fourthImageSpotlight.spotlight = Spotlight.Rect(center: fourthImageView.center, size: CGSize(width: 150, height: 150))
         viewsArray.append(fourthImageSpotlight)
     }
     
     @objc func startTutorial() {
         //Create Walkthrough Controller
-        walkthroughViewController = WalkthroughViewController(viewsArray: viewsArray)
+        walkthroughViewController = WalkthroughViewController(viewsArray: viewsArray, showsSkipButton: false)
         walkthroughViewController.subDelegate = self
         present(walkthroughViewController, animated: true, completion: nil)
     }
@@ -114,6 +114,4 @@ extension ViewController: WalkthroughViewControllerDelegate {
     func walkthroughViewControllerTapped(_ viewController: WalkthroughViewController, isInsideSpotlight: Bool) {
         //TODO
     }
-    
-    
 }

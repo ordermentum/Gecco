@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct SpotlightDictionary {
+public struct WalkthroughStep {
     public init() {
         // This initializer intentionally left empty
     }

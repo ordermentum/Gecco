@@ -20,7 +20,7 @@
 		46C6AE421C4E0A5E004AAE2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C6AE411C4E0A5E004AAE2F /* ViewController.swift */; };
 		B6EBAB771D8A477A004297E0 /* Gecco.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467D205D1C48883C0033D5CA /* Gecco.framework */; };
 		CA782BD7225C50020077B68F /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA782BD6225C50020077B68F /* WalkthroughViewController.swift */; };
-		CA782BD9225C522A0077B68F /* SpotlightDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA782BD8225C522A0077B68F /* SpotlightDictionary.swift */; };
+		CA782BD9225C522A0077B68F /* WalkthroughStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA782BD8225C522A0077B68F /* WalkthroughStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		46C6AE241C4DF9A8004AAE2F /* GeccoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeccoTests.swift; sourceTree = "<group>"; };
 		46C6AE411C4E0A5E004AAE2F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA782BD6225C50020077B68F /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
-		CA782BD8225C522A0077B68F /* SpotlightDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightDictionary.swift; sourceTree = "<group>"; };
+		CA782BD8225C522A0077B68F /* WalkthroughStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 				467D20B21C488D620033D5CA /* SpotlightViewController.swift */,
 				467D20BB1C4DBF810033D5CA /* SpotlightTransitionController.swift */,
 				CA782BD6225C50020077B68F /* WalkthroughViewController.swift */,
-				CA782BD8225C522A0077B68F /* SpotlightDictionary.swift */,
+				CA782BD8225C522A0077B68F /* WalkthroughStep.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 			files = (
 				46C6AE391C4DFA01004AAE2F /* SpotlightTransitionController.swift in Sources */,
 				46C6AE361C4DFA01004AAE2F /* Spotlight.swift in Sources */,
-				CA782BD9225C522A0077B68F /* SpotlightDictionary.swift in Sources */,
+				CA782BD9225C522A0077B68F /* WalkthroughStep.swift in Sources */,
 				46C6AE381C4DFA01004AAE2F /* SpotlightViewController.swift in Sources */,
 				46C6AE371C4DFA01004AAE2F /* SpotlightView.swift in Sources */,
 				CA782BD7225C50020077B68F /* WalkthroughViewController.swift in Sources */,
