@@ -83,6 +83,11 @@ open class WalkthroughViewController: SpotlightViewController {
         skipButton.titleLabel?.font = font
     }
     
+    public func setBackgroundAlpha(backgroundAlpha: CGFloat) {
+        alpha = backgroundAlpha
+        self.setupSpotlightView(alpha)
+    }
+    
     func setupHelperViews() {
         //Setup Helper Views
         for spotlight: WalkthroughStep in viewsArray {

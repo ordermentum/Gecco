@@ -58,7 +58,7 @@ open class SpotlightViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    fileprivate func setupSpotlightView(_ alpha: CGFloat) {
+    public func setupSpotlightView(_ alpha: CGFloat) {
         spotlightView.frame = view.bounds
         spotlightView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
         spotlightView.isUserInteractionEnabled = false

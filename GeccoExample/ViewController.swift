@@ -95,6 +95,8 @@ class ViewController: UIViewController {
         walkthroughViewController = WalkthroughViewController(viewsArray: viewsArray, showsSkipButton: false)
         walkthroughViewController.subDelegate = self
         present(walkthroughViewController, animated: true, completion: nil)
+        
+        walkthroughViewController.setBackgroundAlpha(backgroundAlpha: 0.9)
     }
 }
 
