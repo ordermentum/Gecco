@@ -67,6 +67,22 @@ open class WalkthroughViewController: SpotlightViewController {
         }
     }
     
+    func setSkipButtonTitle(titleString: String) {
+        skipButton.setTitle(titleString, for: .normal)
+    }
+    
+    func setSkipButtonTitleColor(color: UIColor) {
+        skipButton.setTitleColor(color, for: .normal)
+    }
+    
+    func setSkipButtonFrame(frame: CGRect) {
+        skipButton.frame = frame
+    }
+    
+    func setSkipButtonFont(font: UIFont) {
+        skipButton.titleLabel?.font = font
+    }
+    
     func setupHelperViews() {
         //Setup Helper Views
         for spotlight: WalkthroughStep in viewsArray {
