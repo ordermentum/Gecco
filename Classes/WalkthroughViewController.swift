@@ -63,7 +63,7 @@ open class WalkthroughViewController: SpotlightViewController {
             self.view.addSubview(skipButton)
             
             //Bring to Front
-            self.view.bringSubview(toFront: skipButton)
+            self.view.bringSubviewToFront(skipButton)
         }
     }
     
